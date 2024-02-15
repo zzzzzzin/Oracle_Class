@@ -26,7 +26,10 @@ select DISTINCT jikwi
 from tblInsa
     where substr(ssn, 1, 6) between '800101' and '891231'
     and ssn like '%-1%'; 
-
+--4번 정답
+select distinct jikwi from tblInsa
+    where ssn like '8%-1%';
+    
 -- 5.tblInsa
 -- 수당 20만원 넘는 직원들은 어디 삽니까? > sudang + city    
 select distinct city
