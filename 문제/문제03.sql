@@ -59,6 +59,10 @@ select
 from tblInsa
     where substr(ssn, 8, 1) = '1';
 
+--6번 다른 정답
+select count(*) from tblInsa
+    where (ssn like '__07%' or ssn like '__08%' or ssn like '__09%') and ssn like '%-2%';    
+
 -- 7. tblInsa. 개발부 + 직위별 인원수? -> 부장 ?명, 과장 ?명, 대리 ?명, 사원 ?명
 select 
     count(case
@@ -132,6 +136,11 @@ from tblInsa
 
 
 --5. tblInsa. 장급(부장,과장)의 평균 급여와 사원급(대리,사원)의 평균 급여의 차액?
+select
+    avg(case
+        when jikwi in ('부장', '과장') then basicpay
+    end)
+from tblInsa;
 
 -- ### max(), min() ###################################
 
