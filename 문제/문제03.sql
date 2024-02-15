@@ -23,6 +23,29 @@ select count(*)
 from tblinsa
     where tel not like '010%';
 
+-- 4번 다른 정답들
+select
+    count(case
+        when not tel like '010%' then 1
+    end)
+from tblInsa;
+
+select
+    count(*) - 
+    count(case
+        when tel like '010%' then 1
+        when tel is null then 1
+    end)
+from tblInsa;
+
+select
+    count(case
+        when tel like '010%' then null
+        when tel is null then null
+        else 1
+    end)
+from tblInsa;
+
 -- 5. tblInsa. 서울, 경기, 인천에 거주하는 직원수? > city
 select count(*)
 from tblinsa
