@@ -28,3 +28,5 @@ INSERT INTO tblCountry VALUES ('케냐','나이로비',NULL,'AF',58);
 INSERT INTO tblCountry VALUES ('벨기에','브뤼셀',1012,'EU',3);
 
 COMMIT;
+
+select * from tblCountry;

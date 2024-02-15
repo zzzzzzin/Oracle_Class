@@ -139,11 +139,12 @@ from tblInsa
 select
     avg(case
         when jikwi in ('부장', '과장') then basicpay
+    end) - avg(case
+        when jikwi in ('대리', '사원') then basicpay
     end)
 from tblInsa;
 
 -- ### max(), min() ###################################
-
 
 --1. tblCountry. 면적이 가장 넓은 나라의 면적은? 
 select max(area)
