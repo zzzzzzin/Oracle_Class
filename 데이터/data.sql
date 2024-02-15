@@ -1,8 +1,8 @@
 -----------------------------------------------------------------------
 -- 국가 테이블 & 데이터
 -----------------------------------------------------------------------
-
-CREATE TABLE tblcountry
+drop table tblCountry;
+CREATE TABLE tblCountry
 (
 	name VARCHAR2(30) NOT NULL PRIMARY KEY, -- 국가명
 	capital VARCHAR2(30) NULL, -- 수도
@@ -28,11 +28,13 @@ INSERT INTO tblCountry VALUES ('벨기에2','브뤼셀',1012,'EU',3);
 
 COMMIT;
 
-
+select * from tblCountry;
 
 -----------------------------------------------------------------------
 -- 코미디언 테이블 & 데이터
 -----------------------------------------------------------------------
+drop table tblComedian;
+
 CREATE TABLE tblComedian
 (
 	first varchar2(20) not null,
@@ -64,7 +66,7 @@ COMMIT;
 -- 이름 테이블 & 데이터
 -----------------------------------------------------------------------
 
-
+drop table tblname;
 CREATE TABLE TBLNAME
 (
 	first varchar2(20) not null,
@@ -99,7 +101,7 @@ COMMIT;
 -- 급여 테이블 & 데이터
 -----------------------------------------------------------------------
 
-
+drop table tblSalary;
 CREATE TABLE tblsalary
 (
 	name varchar2(30) not null,
@@ -135,7 +137,7 @@ COMMIT;
 -- 인사 테이블 & 데이터
 -----------------------------------------------------------------------
 
-
+drop table tblInsa;
 CREATE TABLE tblinsa(
         num NUMBER(5) NOT NULL CONSTRAINT tblinsa_pk PRIMARY KEY
        ,name VARCHAR2(20) NOT NULL
@@ -379,7 +381,7 @@ COMMIT;
 -- 매출 장부 테이블 & 데이터
 -----------------------------------------------------------------------
 
-
+drop table tblhousekeeping;
 CREATE TABLE tblhousekeeping
 (
 	seq number primary key,
@@ -486,6 +488,7 @@ COMMIT;
 -- 할일 테이블 & 데이터
 -----------------------------------------------------------------------
 
+drop table tbtodo;
 
 CREATE TABLE tbltodo
 (
@@ -530,6 +533,7 @@ COMMIT;
 -- 동물 테이블 & 데이터
 -----------------------------------------------------------------------
 
+drop table tbzoo;
 
 create table tblZoo (
 	seq number primary key,
@@ -656,6 +660,8 @@ insert into tblZoo (seq, name, family, leg, wing, fly, born, breath, thermo, siz
 -----------------------------------------------------------------------
 -- 주소록 테이블 & 데이터
 -----------------------------------------------------------------------
+
+drop table tblAddressBook;
 
 create table tblAddressBook (
 	seq number primary key,
