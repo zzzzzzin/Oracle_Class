@@ -35,6 +35,7 @@
     - 해당 컬럼에 들어갈 데이터(값)에 대한 조건
         1. 조건을 만족하면 > 대입
         2. 조건을 불만족하면 > 에러 발생
+        
     - 데이터 무결성을 보장하는 위한 도구(***)
     
     1. NOT NULL
@@ -45,7 +46,8 @@
     2. PRIMARY KEY, PK
         - 기본키
         - 테이블의 행을 구분하기 위한 제약 사항
-        - 모든 테이블은 반드시 1개의 기본키가 존재해야 한다.(**********)        
+        - 모든 테이블은 반드시 1개의 기본키가 존재해야 한다.(**********)    
+        - UNIQUE + NOT NULL
     
     3. FOREIGN KEY
     
@@ -252,6 +254,63 @@ insert into tblMemo (seq, name, memo, regdate)
             values (5, default, '메모입니다.', sysdate);            
 
 select * from tblMemo; --2		메모입니다.	24/02/15
+
+
+
+
+/*
+    제약 사항을 만드는 방법
+    
+    1. 컬럼 수준에서 만드는 방법
+        - 이전에 수업했던 방식
+        - 컬럼을 선언할 때, 제약 사항도 같이 선언하는 방법
+        
+    2. 테이블 수준에서 만드는 방법
+        - 컬럼 선언과 제약 사항은 선언을 분리시켜 선언하는 방법
+        - 코드 관리
+    
+    3. 외부에서 만드는 방법
+        - 테이블 수정 명령어 사용 > alter table
+*/
+
+
+
+
+
+-- 1. 컬럼 수준에서 만드는 방법
+drop table tblMemo;
+
+create table tblMemo(
+    seq number constraint tblmemo_seq_pk primary key,
+    name varchar2(30),
+    memo varchar2(1000),
+    regdate date
+);
+-- ORA-00001: 무결성 제약 조건(HR.SYS_C008474)에 위배됩니다 > 아래의 insert문을 한번 초과했을 경우, PK인 seq가 중복되기 때문에
+insert into tblMemo (seq, name, memo, regdate) values (1, '홍길동', '메모', sysdate);
+
+select * from tblMemo;
+
+
+
+-- 2. 테이블 수준에서 만드는 방법
+drop table tblMemo;
+
+create table tblMemo(
+    seq number,
+    name varchar2(30),
+    memo varchar2(1000),
+    regdate date,
+    -- 제약사항을 아래에 분리해서 정의
+    constraint tblmemo_seq_pk primary key(seq),
+    constraint tblmemo_name_uq unique(name),
+    constraint tblmemo_memo_ck check(length(memo) >= 10)
+);
+-- ORA-00001: 무결성 제약 조건(HR.SYS_C008474)에 위배됩니다 > 아래의 insert문을 한번 초과했을 경우, PK인 seq가 중복되기 때문에
+insert into tblMemo (seq, name, memo, regdate) values (1, '홍길동', '메모', sysdate);
+
+select * from tblMemo;
+
 
 
 
