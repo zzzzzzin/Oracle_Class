@@ -26,4 +26,4 @@ select
     first_name, last_name
 from employees
      where length(last_name) = 4
-     order by length(first_name);
+     order by first_name;
