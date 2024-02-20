@@ -1,7 +1,7 @@
 -- ### join ###################################
 --못 푼 문제: 24번
---틀린 문제: 4(where), 7번(join), 8번(where)
---이해x 문제: 8번(where)
+--틀린 문제:  12번
+--이해x 문제: 
 
 -- 1. tblStaff, tblProject. 현재 재직중인 모든 직원의 이름, 주소, 월급, 담당프로젝트명을 가져오시오.
 select
@@ -96,7 +96,7 @@ from tblRent r
                 on r.video = v.seq
                     inner join tblgenre g
                         on v.genre = g.seq
-where r.rentdate like '07/02%';
+where to_char(r.rentdate, 'yyyy-mm-dd') like '2007-02%';
 -- where r.rentdate >= to_date('2007-02-01', 'yyyy-mm-dd');
 
 -- 9. tblVideo, tblRent, tblMember. 현재 반납을 안한 회원명과 비디오명, 대여날짜를 가져오시오.
@@ -130,14 +130,11 @@ from employees e
         
 -- 12. employees, jobs. 직무(job_id)별 최고급여(max_salary) 받는 사원 정보를 가져오시오.
 select * from jobs;
-select 
-    j.job_title,
-    max(j.max_salary)
-from employees e
-    inner join jobs j
-        on e.job_id = j.job_id
-group by j.job_title;
-    
+select
+    count(*)
+from employees s
+    inner join j
+        on s.job_id = j.job_id;
 -- 13. departments, locations. 모든 부서와 각 부서가 위치하고 있는 도시의 이름을 가져오시오.
 select
     d.department_name,
