@@ -1,6 +1,6 @@
 -- ### join ###################################
 --못 푼 문제: 24번
---틀린 문제: 4(where), 7번(join), 8번(where)
+--틀린 문제: 4(where), 7번(join)
 --이해x 문제: 8번(where)
 
 -- 1. tblStaff, tblProject. 현재 재직중인 모든 직원의 이름, 주소, 월급, 담당프로젝트명을 가져오시오.
@@ -96,7 +96,7 @@ from tblRent r
                 on r.video = v.seq
                     inner join tblgenre g
                         on v.genre = g.seq
-where r.rentdate like '07/02%';
+where to_char(r.rentdate, 'yyyy-mm-dd') like '2007-02%';
 -- where r.rentdate >= to_date('2007-02-01', 'yyyy-mm-dd');
 
 -- 9. tblVideo, tblRent, tblMember. 현재 반납을 안한 회원명과 비디오명, 대여날짜를 가져오시오.
