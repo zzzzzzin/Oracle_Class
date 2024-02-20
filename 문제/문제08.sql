@@ -277,10 +277,9 @@ where e.commission_pct is not null;
 select
     e.first_name,
     e.last_name,
-    e.hire_date,
-    m.e.employee_id
+    e.hire_date
 from employees e
     inner join employees m
         on e.manager_id = m.employee_id
-where e.hire_date - m.hire_date < 0; 
+where e.hire_date < m.hire_date;        
 
