@@ -104,11 +104,11 @@ from tblComputer
 select
     seq as 번호,
     lpad(' ', (level -1) * 5) || name as 부품명,
-    prior name as 부모부품명,       -- prior                :    부모 레코드 참조
+    prior name as 부모부품명,       -- prior                : 부모 레코드 참조
     level,
-    connect_by_root name,           -- connect_by_root name :   최상위 레코드 참조
-    connect_by_isleaf,              -- connect_by_isleaf    :   말단 노드
-    sys_connect_by_path(name, '→')  -- sys_connect_by_path  :   모니터클리너 > →컴퓨터→모니터→모니터클리너
+    connect_by_root name,           -- connect_by_root name : 최상위 레코드 참조
+    connect_by_isleaf,              -- connect_by_isleaf    : 말단 노드
+    sys_connect_by_path(name, '→')  -- sys_connect_by_path  : 모니터클리너 > →컴퓨터→모니터→모니터클리너
 from tblComputer
     start with pseq is null
         connect by prior seq = pseq

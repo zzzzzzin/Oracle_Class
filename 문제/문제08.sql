@@ -1,5 +1,5 @@
 -- ### join ###################################
---못 푼 문제: 24번, 26번
+--못 푼 문제: 24번
 --틀린 문제: 4(where), 7번(join), 8번(where)
 --이해x 문제: 8번(where)
 
@@ -277,10 +277,9 @@ where e.commission_pct is not null;
 select
     e.first_name,
     e.last_name,
-    e.hire_date,
-    m.e.employee_id
+    e.hire_date
 from employees e
     inner join employees m
         on e.manager_id = m.employee_id
-where e.hire_date - m.hire_date < 0; 
+where e.hire_date < m.hire_date;        
 
