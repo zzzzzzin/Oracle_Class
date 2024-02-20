@@ -1,5 +1,6 @@
 -- ### subquery ###################################
 -- 못 푼 문제: 
+-- 틀린 문제: 2번, 3번
 
 -- 1. employees. 'Munich' 도시에 위치한 부서에 소속된 직원들 명단?
 select * from employees;
@@ -7,7 +8,7 @@ select * from departments;
 select * from locations;
 
 -- department_id(employees) > department_id, location_id(departments) > location_id, city(locations)
-select e.first_name || ' ' || e.last_name as name
+select *
 from employees e
 where e.department_id = (select d.department_id from departments d where d.location_id = (select l.location_id from locations l where city = 'Munich'));
 
@@ -20,23 +21,50 @@ select * from tblMen;
 select * from tblWomen;
 
 select
-    m.name as 남자,
-    m.height as 남자키,
-    m.weight as 남자몸무게,
-    m.couple as 여자,
+    m.name as "[남자]",
+    m.height as "[남자키]",
+    m.weight as "[남자몸무게]",
+    m.couple as "[여자]",
     (case
         when (select w.couple from tblWomen w where w.name = m.couple) = m.name then (select w.height from tblWomen w where w.name = m.couple)
-    end) as 여자키,
+    end) as "[여자키]",
     (case
         when (select w.couple from tblWomen w where w.name = m.couple) = m.name then (select w.weight from tblWomen w where w.name = m.couple)
-    end) as 여자몸무게
-from tblMen m;
+    end) as "[여자몸무게]"
+    -- 답지
+    -- (SELECT height FROM tblwomen where tblmen.couple = name) as "[여자키]",
+    -- (SELECT weight FROM tblwomen where tblmen.couple = name) as "[여자몸무게]" 
+from tblMen m
+-- 서로 짝이 있는 사람 중 > 미작성
+where couple is not null;
 
 -- 3. tblAddressBook. 가장 많은 사람들이 가지고 있는 직업은 주로 어느 지역 태생(hometown)인가?
+select * from tblAddressBook;
 
+-- 가장 많은 사람들이 가지고 있는 직업
+select job from tblAddressBook group by job order by count(*) desc; --학생
+
+-- 가장 많은 사람들이 가지고 있는 직업을 가진 사람들의 수
+select max(count(*)) from tblAddressBook group by job;  --332
+
+select distinct hometown from tblAddressBook where job
+    = (select job from tblAddressBook group by job having count(*)
+        = (select max(count(job)) from tblAddressBook group by job));
 
 -- 4. tblAddressBook. 이메일 도메인들 중 평균 아이디 길이가 가장 긴 이메일 사이트의 도메인은 무엇인가?
 
+--도메인 길이
+select
+    length(substr(email, instr(email, '@') + 1, instr(email, '.') - instr(email, '@') -1))
+        as 도메인길이
+from tblAddressBook;
+
+-- group by 도메인길이
+select
+    substr(email, instr(email, '@') + 1, instr(email, '.') - instr(email, '@') -1),
+    avg(length(substr(email, 1, instr(email, '@') -1 )))
+from tblAddressBook
+group by substr(email, instr(email, '@') + 1, instr(email, '.') - instr(email, '@') -1);
 
 -- 5. tblAddressBook. 평균 나이가 가장 많은 출신(hometown)들이 가지고 있는 직업 중 가장 많은 직업은?
 
