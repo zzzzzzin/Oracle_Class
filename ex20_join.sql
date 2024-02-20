@@ -61,8 +61,9 @@ select * from tblStaff where project like  '%회원 응대%';   -- 호호호, �
                                                             -- 원인: 테이블 스키마(구조)가 잘못된 상태
                                                             -- 해결: 테이블 재구성 > project를 독립된 table로 생성
 
-drop table tblStaff;
 drop table tblProject;
+drop table tblStaff;
+
 -- 참조 방향 결정
 -- : 테이블(레코드) 생성 시간을 고려 (적중률: 99%)
 

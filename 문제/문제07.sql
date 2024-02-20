@@ -67,6 +67,9 @@ from tblAddressBook
 group by substr(email, instr(email, '@') + 1, instr(email, '.') - instr(email, '@') -1);
 
 -- 5. tblAddressBook. 평균 나이가 가장 많은 출신(hometown)들이 가지고 있는 직업 중 가장 많은 직업은?
+-- 5-1. 평균 나이가 가장 높은 출신
+select max(round(avg(age))) from tbladdressbook group by hometown;
+-- 5-3. 광주 출신 학생
 
 
 -- 6. tblAddressBook. 남자 평균 나이보다 나이가 많은 서울 태생 + 직업을 가지고 있는 사람들을 가져오시오.
