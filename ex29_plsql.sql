@@ -1040,7 +1040,7 @@ end;
     
     1. in       > 기본
     2. out      > 
-    3. in ount  > 잘 사용 X
+    3. in out  > 잘 사용 X
 */
 
 create or replace procedure procTest(
@@ -1077,7 +1077,7 @@ end;
 1. procTest1
     - 부서 전달(인자 1개) > in
     - 해당 부서의 직원 중 급여를 가장 많이 받는 사람의 번호를 반환 > out
-    - 호울 번호 출력
+    - 호출 번호 출력
 
 2. procTest2
     - 직원 번호 전달 > in
