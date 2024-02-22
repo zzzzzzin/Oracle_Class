@@ -849,7 +849,7 @@ declare
      vname varchar2(15);
 begin
 
---    select count(*) into vcnt from tblCountry where name = '러시아';
+    select count(*) into vcnt from tblCountry where name = '러시아';
 --    dbms_output.put_line(100 / vcnt);
     
     select name into vname from tblInsa where num = 1000;
