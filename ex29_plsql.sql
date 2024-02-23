@@ -1498,7 +1498,7 @@ create or replace trigger trgMen
     after
     delete
     on tblMen
---     for each row
+     for each row
 begin
     
     dbms_output.put_line('레코드를 삭제했습니다.' || :old.name  || ', ' || :old.age);
@@ -1586,5 +1586,135 @@ delete from tblStaff where seq = 1;
 select * from tblStaff;
 select * from tblProject;
 rollback;
+
+
+-- 회원 테이블, 게시판 테이블
+-- 포인트 정책
+-- 1. 글 작성 > 포인트 + 100
+-- 2. 글 삭제 > 포인트 - 50
+
+drop table tblBoard;
+drop table tblUser;
+drop sequence seqBoard;
+
+create table tblUser (
+    id varchar2(30) not null,
+    point number not null
+);
+
+alter table tblUser
+    add constraint tbluser_id_pk primary key(id);    
+
+create table tblBoard (
+    seq number not null,
+    subject varchar2(2000) not null,
+    id varchar2(30) not null
+);
+
+alter table tblBoard
+    add constraint tblboard_seq_pk primary key(seq);
+
+alter table tblBoard
+    add constraint tblboard_id_fk foreign key(id) references tblUser(id);
+
+create sequence seqBoard;
+
+insert into tblUser values ('hong', 1000);
+
+-- 1. 글을 쓴다.(삭제한다.)
+-- 2. 포인트를 누적한다.(차감한다.)
+
+-- Case 1. Hard Coding
+-- 개발자 직접 제어
+-- 실수 > 일부 업무 누락;;
+
+-- 1.1 글쓰기
+insert into tblBoard values (seqBoard.nextVal, '게시판입니다.', 'hong');
+
+-- 1.2 포인트 누적하기
+update tblUser set point = point + 100 where id = 'hong';
+
+
+-- 1.3 글삭제하기
+delete from tblBoard where seq = 1;
+
+-- 1.4 포인트 차감하기
+update tblUser set point = point - 50 where id = 'hong';
+
+
+select * from tblBoard;
+select * from tblUser;
+
+
+
+-- Case 2. 프로시저
+create or replace procedure procAddBoard (
+    pid varchar2,
+    psubject varchar2
+)
+is
+begin
+    
+    insert into tblBoard values (seqBoard.nextVal, psubject, pid);
+    
+    update tblUser set point = point + 100 where id = pid;
+    
+end procAddBoard;
+/
+
+
+create or replace procedure procDeleteBoard (
+    pseq number
+)
+is
+    vid tblUser.id%type;
+begin
+
+    select id into vid from tblBoard where seq = pseq;
+
+    delete from tblBoard where seq = pseq;
+    
+    update tblUser set point = point - 50 where id = vid;
+
+end procDeleteBoard;
+/
+
+
+begin
+--    procAddBoard('hong', '안녕하세요.');
+    procDeleteBoard(2);
+end;
+/
+
+-- Case 3. 트리거
+create or replace trigger trgBoard
+    after
+    insert or delete
+    on tblBoard
+    for each row
+begin
+    
+    if inserting then
+        update tblUser set point = point + 100 where id = :new.id;
+    elsif deleting then
+        update tblUser set point = point - 50 where id = :old.id;
+    end if;
+    
+end trgBoard;
+/
+
+delete from tbl
+
+insert into tblBoard values (seqBoard.nextVal, '금요일입니다.', 'hong');
+
+delete from tblBoard where seq = 4;  
+
+select * from tblBoard;
+select * from tblUser;
+
+
+
+
+
 
 

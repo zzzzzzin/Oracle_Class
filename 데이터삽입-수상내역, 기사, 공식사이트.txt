@@ -1,0 +1,94 @@
+insert into tblArticle values (seqArticle, '이변의 설 연휴 극장가, 박스오피스 1위는?', 8);
+insert into tblArticle values (seqArticle, '[인터뷰] 누구나 선악을 동시에 품고 산다, <데드맨> 하준원 감독', 8);
+insert into tblArticle values (seqArticle, '[기획] 가족과 함께 인생이 담긴 영화를 <데드맨> 하준원 감독, <도그데이즈> 김덕민 감독, <소풍> 김용균 감독 인터뷰', 8);
+insert into tblArticle values (seqArticle, '[인터뷰] ‘데드맨’ 배우 조진웅, 인간답게 걷기', 8);
+insert into tblArticle values (seqArticle, '[커버] 죽거나 혹은 나쁘거나, ‘데드맨’ 조진웅, 김희애, 이수경', 8);
+insert into tblArticle values (seqArticle, '[인터뷰] ‘데드맨’ 배우 이수경, 또 다른 길을 찾다', 8);
+insert into tblArticle values (seqArticle, '[인터뷰] ‘데드맨’ 배우 조진웅, 인간답게 걷기', 8);
+insert into tblArticle values (seqArticle, '[LIST] 조진웅이 말하는 요즘 빠져 있는 것들의 목록', 8);
+insert into tblArticle values (seqArticle, '[WHO ARE YOU] ‘외계+인’ 2부 이시훈', 8);
+insert into tblArticle values (seqArticle, '[특집] 회심의 한방이 온다, 2024년에 보게 될 한국영화의 이름들', 8);
+insert into tblArticle values (seqArticle, '[2023 기대작⑩] 하준원 감독 ‘데드맨’, “배우들의 공들인 연기를 보는 맛”', 8);
+insert into tblArticle values (seqArticle, '[인터뷰] 이찬호 스튜디오웨이브 대표, “30대 여성이 즐길 수 있는 스토리에 주목한다”', 8);
+
+-- 9번 아가일
+insert into tblArticle values (seqArticle, '이변의 설 연휴 극장가, 박스오피스 1위는?',9);
+insert into tblArticle values (seqArticle, '[인터뷰] ‘아가일’ 헨리 카빌, 판타지 같은 스파이',9);
+insert into tblArticle values (seqArticle, '[인터뷰] ‘아가일’ 브라이스 댈러스 하워드, 어머니라는 레퍼런스',9);
+insert into tblArticle values (seqArticle, '[인터뷰] ‘아가일’ 샘 록웰, 새로운 스파이 액션을',9);
+
+-- 12번 추락의 해부
+insert into tblArticle values (seqArticle, '[기획] 모두의 안전을 위해 <워 호스>, 해외영화계의 동물 촬영 사례들',12);
+insert into tblArticle values (seqArticle, '[비평] <추락의 해부>를 감싸고 있는 피로감',12);
+insert into tblArticle values (seqArticle, '[런던] 준 지바니, ‘2024 영국 아카데미 영화상’ 공로상에 선정, 범아프리카영화를 큐레이션하다',12);
+insert into tblArticle values (seqArticle, '[기획] 화제작 <추락의 해부>의 감정적 복잡성과 완성도에 대하여, 결백한 이야기는 없다',12);
+insert into tblArticle values (seqArticle, '수상한 사람들, 제81회 골든글로브 시상식… <성난 사람들> 여러 부문에서 수상해',12);
+
+-- 14번 우견니 
+insert into tblArticle values (seqArticle, '[커버] 너를 만나 성장하다, <우견니> 리뷰와 뤄뤄 감독 인터뷰 그리고 중화권 청춘영화에 관한 짧은 칼럼', 14);
+insert into tblArticle values (seqArticle, '[비평] 불가능을 탐하다, 중화권 청춘영화의 꾸준한 호응에 관한 짧은 칼럼', 14);
+insert into tblArticle values (seqArticle, '[인터뷰] 그럼에도 사랑을 예찬한다, <우견니> 뤄뤄 감독', 14);
+insert into tblArticle values (seqArticle, '[리뷰] 나를 성장시키는 씁쓸한 연애에 관하여, <우견니> 리뷰', 14);
+
+-- 15번 바튼 아카데미
+insert into tblArticle values (seqArticle, '[특집] 기대작 정보를 미리 살피는 예습파
+', 15);
+insert into tblArticle values (seqArticle, '[런던] 준 지바니, ‘2024 영국 아카데미 영화상’ 공로상에 선정, 범아프리카영화를 큐레이션하다
+', 15);
+
+-- 16번 괴물
+insert into tblArticle values (seqArticle, '[비평] <추락의 해부>를 감싸고 있는 피로감', 15);
+insert into tblArticle values (seqArticle, '[특집] 평범한 취향을 거부하는 홍대병파', 15);
+insert into tblArticle values (seqArticle, '[특집] 도전적인 시도의 성과, 2023년 인상 깊었던 콘텐츠', 15);
+insert into tblArticle values (seqArticle, '‘조용히 붐비는 새해 극장가’, <서울의 봄> 누적 관객수 1200만명 돌파, <노량: 죽음의 바다> <괴물>의 꾸준한 흥행몰이', 15);
+insert into tblArticle values (seqArticle, '[특집] 2023년을 빛낸 올해의 해외영화, 관습을 벗어난 기성감독들의 시도', 15);
+insert into tblArticle values (seqArticle, '[특집] 거장의 필치는 건재했다, 올해의 해외영화 총평, 6위부터 10위까지의 영화들', 15);
+insert into tblArticle values (seqArticle, '[인터뷰] 좋은 긴장을 느끼며, 좋은 마음을 생각하며, ‘물안에서’ ‘우리의 하루’ 하성국', 15);
+insert into tblArticle values (seqArticle, '[비평] 마음의 재난에서 벗어난 풍성한 삶, <괴물>', 15);
+insert into tblArticle values (seqArticle, '[인터뷰] 밤 11시에 영화 이야기를 시작하면, <사랑하는 장면이 내게로 왔다> 서이제, 이지수 작가', 15);
+insert into tblArticle values (seqArticle, '[특집] 다른 이의 시선을 빌려야 했던 이유는, ‘괴물’ 리뷰', 15);
+insert into tblArticle values (seqArticle, '[특집] ‘괴물’의 진실은?, 고레에다 히로카즈 감독 X 배우 송강호 대담, <괴물> 리뷰와 각본가 사카모토 유지 단독 인터뷰', 15);
+insert into tblArticle values (seqArticle, '[송경원 편집장] 세번의 울림, 찰나의 빛', 15);
+insert into tblArticle values (seqArticle, '[특집] “감정은 컵 속의 물과 같아서”, 고레에다 히로카즈 감독 × 배우 송강호 <괴물> 마스터스 토크 2', 15);
+
+-- 18번 이프온리 
+insert into tblArticle values (seqArticle, '[이경희의 오늘은 SF] SF 세계의 사랑', 18);
+insert into tblArticle values (seqArticle, '[2018 러시아월드컵①] SBS 박지성·배성재, "에너지와 자신감이 흐름을 잘 타기를"', 18);
+insert into tblArticle values (seqArticle, '[영화가 사랑한 영화들③] <좋은 친구들> <사무라이> <사망유희> 外', 18);
+insert into tblArticle values (seqArticle, '[시사 티켓] 늦기 전에 제발', 18);
+insert into tblArticle values (seqArticle, '[비평 릴레이] <이프 온리>, 김소영 영화평론가', 18);
+insert into tblArticle values (seqArticle, '<이프온리>, 최초로 경기장내 대규모 시사회 개최', 18);
+
+-- 19번 중경삼림
+insert into tblArticle values (seqArticle, '[기획] ‘해피 투게더 리마스터링’과 왕가위 감독 단독 인터뷰', 19);
+insert into tblArticle values (seqArticle, '#BIFF 3호 [기획] 양조위, “배우 인생 40년, 여전히 도전하는 마음으로”', 19);
+insert into tblArticle values (seqArticle, '#BIFF 3호 [기획] 양조위 배우론 : 그의 눈빛, 그 마법의 인력', 19);
+insert into tblArticle values (seqArticle, '[이주현 편집장] 부산의 화양연화', 19);
+insert into tblArticle values (seqArticle, '#BIFF 1호 [인터뷰] 허문영 집행위원장, 부산국제영화제는 최소 세 개의 트랙 위를 달리고 있다.', 19);
+insert into tblArticle values (seqArticle, '''그대 너머에'' 리얼함의 형식이 우리를 기만할 때', 19);
+
+-- 20번 서울의봄
+insert into tblArticle values (seqArticle, '[특집] 이두용에 관한 끝나지 않은 질문들, 이두용 영화의 굴곡은 지금도 왜 유의미한가', 20);
+insert into tblArticle values (seqArticle, '[특집] 부모님과 함께 영화를 보는 효자파', 20);
+insert into tblArticle values (seqArticle, '[특집] 도전적인 시도의 성과, 2023년 인상 깊었던 콘텐츠', 20);
+
+-- 21번 오늘밤세계에서
+insert into tblArticle values (seqArticle, '[기획] 일본 애니메이션에 열광하는 관객에게 일어나고 있는 변화는, 강상욱, 김민하 인터뷰', 21);
+insert into tblArticle values (seqArticle, '[기획]극장 위기론 대두되는 2023년, ‘흥행 공식’이 깨졌다', 21);
+insert into tblArticle values (seqArticle, '[이주현 편집장] 우리를 설레게 할 배우들', 21);
+
+-- 22번 화양연화
+insert into tblArticle values (seqArticle, '[비평] 마음의 재난에서 벗어난 풍성한 삶, <괴물>', 22);
+insert into tblArticle values (seqArticle, '[LIST] 차승원이 말하는 요즘 빠져 있는 것들의 목록', 22);
+insert into tblArticle values (seqArticle, '[기획] ‘해피 투게더 리마스터링’과 왕가위 감독 단독 인터뷰', 22);
+insert into tblArticle values (seqArticle, '[인터뷰] 신우석 돌고래유괴단 대표 ① "뉴진스 ''OMG'' MV에 침착맨을 캐스팅 한 이유는..."', 22);
+insert into tblArticle values (seqArticle, '[기획] ‘더 글로리’, 권력에의 욕망과 복수의 카타르시스', 22);
+
+-- 23번
+insert into tblArticle values (seqArticle, '', 22);
+
+insert into tblArticle values (seqArticle, '', 22);
+insert into tblArticle values (seqArticle, '', 22);
+insert into tblArticle values (seqArticle, '', 22);
+insert into tblArticle values (seqArticle, '', 22);
+insert into tblArticle values (seqArticle, '', 22);
