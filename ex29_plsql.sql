@@ -913,7 +913,7 @@ select * from tblLog;
     is(as)
     [   변수 선언;
         커서 선언;]
-    bdgin
+    begin
         구현부;
     [exception
         예외처리;]
